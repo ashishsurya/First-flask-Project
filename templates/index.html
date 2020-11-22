@@ -1,0 +1,37 @@
+{% extends "base.html" %}
+
+{% block head %}
+<title>Home</title>
+{% endblock %}
+
+
+{% block body %}
+<h1>Home Page</h1>
+<br>
+
+   <main role="main">
+      <div class="jumbotron">
+      <div class="col-sm-8 mx-auto">
+         <h1>Welcome</h1>
+         <p>Welcome to the Flask tutorial.This is a micro web framework</p>
+         <p>Go see the documentation <a href="https://flask.palletsprojects.com/en/1.1.x/">Here</a></p>
+         <br>
+         <p>
+            This website is built based on the <b>FLASK</b> framework
+         </p>
+         <p>
+            <a class="btn btn-primary" href="/posts">Go To Posts</a>
+         </p>
+         <p>
+            <b style="color:red">Here are links to the tutorials of Flask for Begginers</b>
+         </p>
+         <ul style="list-style:circle;">
+            <li><a href="https://www.youtube.com/watch?v=3mwFC4SHY-Y&t=633s">Clever Programmer</a></li>
+            <li><a href="https://www.youtube.com/watch?v=mqhxxeeTbu0&list=PLzMcBGfZo4-n4vJJybUVV3Un_NFS5EOgX">Tech With Tim</a></li>
+            <li><a href="https://www.youtube.com/watch?v=MwZwr5Tvyxo&list=PL-osiE80TeTs4UjLw5MM6OjgkjFeUxCYH">Corey Schafer</a></li>
+         </ul>
+         
+      </div>
+      </div>
+   </main>
+{% endblock %}

@@ -1,0 +1,66 @@
+{% extends "base.html" %}
+
+{% block head %}
+<title>Posts</title>
+{% endblock %}
+
+{% block body %}
+<h1>ALL Posts</h1>
+
+
+      <hr>
+      <h2>Create New Blog Post:</h2>
+      <form action="/posts" method="POST">
+         <label for="title">Title:</label> 
+         <input class="form-control" type="text" placeholder="Title of the Post" name="title" id='title' aria-label="Title of the Post">
+         <br>
+         
+         <label for="author">Author:</label> 
+         
+         <input class="form-control" type="text" placeholder="Name of the Author" name='author' id = 'author' aria-label="Name of the Author">
+         <br>
+         
+         
+         <label for="content">Post:</label>
+         <textarea class="form-control" id="content" rows="3" placeholder="Content" name="content" id="content" aria-label="Content"></textarea>
+         
+         <br>
+         <input class='btn btn-outline-info' type="submit" value="Post">
+      </form>
+      
+   
+
+
+   
+
+   {% for post in posts %}
+
+      <hr>
+      <br>
+      <h2>{{ post.title }}</h2>
+
+      {% if post.author %}
+         <small>
+            Written by {{ post.author }} on {{ post.date_posted}}
+         </small>
+         
+      {% else %}
+      <small>
+         Written by Unknown on {{ post.date_posted}}
+      </small>
+      {% endif %}
+      <br>
+      <br>
+
+      <p style="white-space: pre-wrap;">{{ post.content }}</p>
+      <a class="btn btn-outline-danger" href="/posts/delete/{{ post.id }}">
+         Delete
+      </a>
+      <a class="btn btn-outline-primary" href="/posts/edit/{{ post.id }}">
+         Edit
+      </a>
+      <br>
+
+
+   {% endfor %}
+{% endblock %}
